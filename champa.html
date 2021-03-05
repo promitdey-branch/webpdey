@@ -23,18 +23,8 @@
 
 branch.setBranchViewData(linkData);   
             
-  </script>
-</head>
-<body>
-<img src="testweb.jpeg" id="bg" alt="" style="width:100%">
-<form onsubmit="sendSMS(this); return false;">
-            <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
-            <br/>
-            <input type="submit"/>
-        </form>
-</body>
     
-    <script type="text/javascript">
+   <script type="text/javascript">
 function sendSMS(form){
   branch.sendSMS(
     phone: form.phone.text,
@@ -48,6 +38,17 @@ function sendSMS(form){
     { make_new_link: false }, // Default: false. If set to true, sendSMS will generate a new link even if one already exists.
     function(err) { console.log(err); }
   );
+</head>
+<body>
+<img src="testweb.jpeg" id="bg" alt="" style="width:100%">
+<form onsubmit="sendSMS(this); return false;">
+            <input id="phone" name="phone" type="tel" placeholder="(650) 123-4567" />
+            <br/>
+            <input type="submit"/>
+        </form>
+</body>
+    
+    
 }
 </script>
 </html>
