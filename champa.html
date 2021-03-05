@@ -33,4 +33,21 @@ branch.setBranchViewData(linkData);
             <input type="submit"/>
         </form>
 </body>
+    
+    <script type="text/javascript">
+function sendSMS(form) {
+  branch.sendSMS(
+    phone: form.phone.text,
+    {
+      channel: 'Website',
+      feature: 'Text-Me-The-App',
+      data: {
+        foo: 'bar'
+      }
+    },
+    { make_new_link: false }, // Default: false. If set to true, sendSMS will generate a new link even if one already exists.
+    function(err) { console.log(err); }
+  );
+}
+</script>
 </html>
